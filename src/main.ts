@@ -1,3 +1,4 @@
+/* eslint-disable i18n-text/no-en */
 /**
  * 
  当前工程，已经 checkout
@@ -24,7 +25,6 @@
     ANDROID_BUNDLE:
     ANDROID_ASSETS:
  */
-
 import * as core from '@actions/core'
 import * as exec from '@actions/exec'
 import * as io from '@actions/io'

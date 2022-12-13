@@ -1,3 +1,4 @@
+/* eslint-disable i18n-text/no-en */
 import * as core from '@actions/core'
 import * as fs from 'fs'
 
@@ -20,7 +21,7 @@ export async function getOrganizationId(): Promise<number | undefined> {
       return
     }
 
-    return id as number
+    return id
   } catch (err) {
     core.debug(
       `Unable to load organization ID from GITHUB_EVENT_PATH: ${

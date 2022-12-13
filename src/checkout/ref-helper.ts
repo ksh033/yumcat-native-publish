@@ -1,3 +1,4 @@
+/* eslint-disable i18n-text/no-en */
 import {IGitCommandManager} from './git-command-manager'
 import * as core from '@actions/core'
 import * as github from '@actions/github'
@@ -228,7 +229,7 @@ export async function checkCommitInfo(
 
     // Expected message?
     const expectedMessage = `Merge ${expectedHeadSha} into ${expectedBaseSha}`
-    if (commitInfo.indexOf(expectedMessage) >= 0) {
+    if (commitInfo.includes(expectedMessage)) {
       return
     }
 
@@ -246,7 +247,7 @@ export async function checkCommitInfo(
         `Expected head sha ${expectedHeadSha}; actual head sha ${actualHeadSha}`
       )
       const octokit = getOctokit(token, {
-        baseUrl: baseUrl,
+        baseUrl,
         userAgent: `actions-checkout-tracepoint/1.0 (code=STALE_MERGE;owner=${repositoryOwner};repo=${repositoryName};pr=${fromPayload(
           'number'
         )};run_id=${

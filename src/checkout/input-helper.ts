@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import * as core from '@actions/core'
 import * as fsHelper from './fs-helper'
 import * as github from '@actions/github'

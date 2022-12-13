@@ -1,3 +1,4 @@
+/* eslint-disable i18n-text/no-en */
 import * as assert from 'assert'
 import * as core from '@actions/core'
 import * as fs from 'fs'

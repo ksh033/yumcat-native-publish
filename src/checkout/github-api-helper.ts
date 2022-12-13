@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable i18n-text/no-en */
 import * as assert from 'assert'
 import * as core from '@actions/core'
@@ -85,7 +86,7 @@ export async function getDefaultBranch(
 ): Promise<string> {
   return await retryHelper.execute(async () => {
     core.info('Retrieving the default branch name')
-    const octokit = getOctokit(authToken, {baseUrl: baseUrl})
+    const octokit = getOctokit(authToken, {baseUrl})
     let result: string
     try {
       // Get the default branch from the repo info
@@ -126,10 +127,10 @@ async function downloadArchive(
   commit: string,
   baseUrl?: string
 ): Promise<Buffer> {
-  const octokit = getOctokit(authToken, {baseUrl: baseUrl})
+  const octokit = getOctokit(authToken, {baseUrl})
   const params: Octokit.ReposGetArchiveLinkParams = {
-    owner: owner,
-    repo: repo,
+    owner,
+    repo,
     archive_format: IS_WINDOWS ? 'zipball' : 'tarball',
     ref: commit || ref
   }

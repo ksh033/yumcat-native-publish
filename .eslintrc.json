@@ -8,6 +8,7 @@
     "project": "./tsconfig.json"
   },
   "rules": {
+    "eslint-comments/no-unused-disable":"off",
     "eslint-comments/no-use": "off",
     "import/no-namespace": "off",
     "eslint-comments/no-unlimited-disable": "off",

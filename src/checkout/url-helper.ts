@@ -20,7 +20,7 @@ export function getFetchUrl(settings: IGitSourceSettings): string {
 }
 
 export function getServerUrl(url?: string): URL {
-  let urlValue =
+  const urlValue =
     url && url.trim().length > 0
       ? url
       : process.env['GITHUB_SERVER_URL'] || 'https://github.com'

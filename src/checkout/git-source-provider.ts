@@ -1,3 +1,6 @@
+/* eslint-disable eslint-comments/no-unused-disable */
+/* eslint-disable eslint-comments/no-duplicate-disable */
+/* eslint-disable github/no-then */
 /* eslint-disable i18n-text/no-en */
 import * as core from '@actions/core'
 import * as fsHelper from './fs-helper'
@@ -51,7 +54,7 @@ export async function getSource(settings: IGitSourceSettings): Promise<void> {
 
         await git
           .config('safe.directory', settings.repositoryPath, true, true)
-          // eslint-disable-next-line github/no-then
+
           .catch(error => {
             core.info(
               `Failed to initialize safe directory with error: ${error}`

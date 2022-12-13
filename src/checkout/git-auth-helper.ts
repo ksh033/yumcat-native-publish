@@ -1,3 +1,5 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable i18n-text/no-en */
 import * as assert from 'assert'
 import * as core from '@actions/core'
 import * as exec from '@actions/exec'
@@ -216,7 +218,7 @@ class GitAuthHelper {
     await fs.promises.mkdir(runnerTemp, {recursive: true})
     await fs.promises.writeFile(
       this.sshKeyPath,
-      this.settings.sshKey.trim() + '\n',
+      `${this.settings.sshKey.trim()}\n`,
       {mode: 0o600}
     )
 
@@ -353,7 +355,7 @@ class GitAuthHelper {
 
   private async removeGitConfig(
     configKey: string,
-    submoduleOnly: boolean = false
+    submoduleOnly = false
   ): Promise<void> {
     if (!submoduleOnly) {
       if (
