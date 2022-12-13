@@ -201,7 +201,7 @@ async function run(): Promise<void> {
         assets: IOS_ASSETS
       })
     }
-  } catch (error:any) {
+  } catch (error: any) {
     core.setFailed(error.message)
   }
 }
