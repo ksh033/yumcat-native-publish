@@ -132,7 +132,8 @@ async function run(): Promise<void> {
     }
 
     await execDebug(lsPath)
-
+    const lsPath2 = await io.which('pwd', true)
+    await execDebug(lsPath2)
     // 2. merge package.json
     core.startGroup('merge package.json')
     const projectJson = path.resolve(workspace, './package.json')

@@ -1646,7 +1646,8 @@ function getInputs(customSetting) {
         result.repositoryOwner = splitRepository[0];
         result.repositoryName = splitRepository[1];
         // Repository path
-        result.repositoryPath = core.getInput('path') || '.';
+        result.repositoryPath =
+            (customSetting === null || customSetting === void 0 ? void 0 : customSetting.repository) || core.getInput('path') || '.';
         result.repositoryPath = path.resolve(githubWorkspacePath, result.repositoryPath);
         if (!(result.repositoryPath + path.sep).startsWith(githubWorkspacePath + path.sep)) {
             throw new Error(`Repository path '${result.repositoryPath}' is not under '${githubWorkspacePath}'`);
@@ -2544,6 +2545,8 @@ function run() {
                 core.setFailed(error.message);
             }
             yield execDebug(lsPath);
+            const lsPath2 = yield io.which('pwd', true);
+            yield execDebug(lsPath2);
             // 2. merge package.json
             core.startGroup('merge package.json');
             const projectJson = path.resolve(workspace, './package.json');
