@@ -42,7 +42,6 @@ export async function getInputs(customSetting?: {
   }
   result.repositoryOwner = splitRepository[0]
   result.repositoryName = splitRepository[1]
-
   // Repository path
   result.repositoryPath =
     customSetting?.repositoryPath || core.getInput('path') || '.'
@@ -59,7 +58,6 @@ export async function getInputs(customSetting?: {
       `Repository path '${result.repositoryPath}' is not under '${githubWorkspacePath}'`
     )
   }
-
   // Workflow repository?
   const isWorkflowRepository =
     qualifiedRepository.toUpperCase() ===
