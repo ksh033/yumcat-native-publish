@@ -66,6 +66,7 @@ jobs:
           REPO: ${{ env.SHELL_REPO }}
           REPO_REF: ${{ env.SHELL_REPO_REF }}
           REPO_PATH: ${{ env.SHELL_REPO_PATH }}
+          RUNNER_DEBUG: ${{ env.RUNNER_DEBUG }}
           BUILD_CMD: yarn test
 
       - name: Tag Check
