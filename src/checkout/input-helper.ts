@@ -1,3 +1,5 @@
+/* eslint-disable i18n-text/no-en */
+/* eslint-disable no-undef */
 /* eslint-disable eqeqeq */
 import * as core from '@actions/core'
 import * as fsHelper from './fs-helper'
@@ -135,6 +137,6 @@ export async function getInputs(customSetting?: {
   // Determine the GitHub URL that the repository is being hosted from
   result.githubServerUrl = core.getInput('github-server-url')
   core.debug(`GitHub Host URL = ${result.githubServerUrl}`)
-
+  core.info(`repository: ${result.repositoryOwner}/${result.repositoryName}`)
   return result
 }

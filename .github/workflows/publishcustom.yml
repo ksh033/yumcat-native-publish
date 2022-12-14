@@ -10,7 +10,7 @@ env:
   # 壳工程
   SHELL_REPO: ksh033/yumcat-native-shell
   # 壳工程ref
-  SHELL_REPO_REF: 0.63.2
+  SHELL_REPO_REF: master
   # 壳工程目录
   SHELL_REPO_PATH: yumcat-native-shell
 jobs:

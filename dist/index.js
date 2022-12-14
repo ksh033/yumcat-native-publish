@@ -1613,6 +1613,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getInputs = void 0;
+/* eslint-disable i18n-text/no-en */
+/* eslint-disable no-undef */
 /* eslint-disable eqeqeq */
 const core = __importStar(__webpack_require__(2186));
 const fsHelper = __importStar(__webpack_require__(8657));
@@ -1715,6 +1717,7 @@ function getInputs(customSetting) {
         // Determine the GitHub URL that the repository is being hosted from
         result.githubServerUrl = core.getInput('github-server-url');
         core.debug(`GitHub Host URL = ${result.githubServerUrl}`);
+        core.info(`repository: ${result.repositoryOwner}/${result.repositoryName}`);
         return result;
     });
 }
