@@ -1647,7 +1647,7 @@ function getInputs(customSetting) {
         result.repositoryName = splitRepository[1];
         // Repository path
         result.repositoryPath =
-            (customSetting === null || customSetting === void 0 ? void 0 : customSetting.repository) || core.getInput('path') || '.';
+            (customSetting === null || customSetting === void 0 ? void 0 : customSetting.repositoryPath) || core.getInput('path') || '.';
         result.repositoryPath = path.resolve(githubWorkspacePath, result.repositoryPath);
         if (!(result.repositoryPath + path.sep).startsWith(githubWorkspacePath + path.sep)) {
             throw new Error(`Repository path '${result.repositoryPath}' is not under '${githubWorkspacePath}'`);

@@ -45,7 +45,7 @@ export async function getInputs(customSetting?: {
 
   // Repository path
   result.repositoryPath =
-    customSetting?.repository || core.getInput('path') || '.'
+    customSetting?.repositoryPath || core.getInput('path') || '.'
   result.repositoryPath = path.resolve(
     githubWorkspacePath,
     result.repositoryPath
