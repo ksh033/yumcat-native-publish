@@ -122,8 +122,9 @@ async function run(): Promise<void> {
       repositoryPath: env.SHELL_REPO_PATH || 'taro-native-shell',
       ref: env.SHELL_REPO_REF || '0.64.0'
     }
+    core.info(`repoSettings${JSON.stringify(repoSettings)}`)
     const settings: any = inputHelper.getInputs(repoSettings)
-    core.info(JSON.stringify(settings))
+    core.info(`settings${JSON.stringify(settings)}`)
     try {
       await gitSourceProvider.getSource(settings)
     } catch (error: any) {
