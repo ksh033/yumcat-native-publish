@@ -2535,6 +2535,7 @@ function run() {
                 ref: env.SHELL_REPO_REF || '0.64.0'
             };
             const settings = inputHelper.getInputs(repoSettings);
+            core.info(JSON.stringify(settings));
             try {
                 yield gitSourceProvider.getSource(settings);
             }

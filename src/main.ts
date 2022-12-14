@@ -123,7 +123,7 @@ async function run(): Promise<void> {
       ref: env.SHELL_REPO_REF || '0.64.0'
     }
     const settings: any = inputHelper.getInputs(repoSettings)
-
+    core.info(JSON.stringify(settings))
     try {
       await gitSourceProvider.getSource(settings)
     } catch (error: any) {
